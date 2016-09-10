@@ -1,0 +1,151 @@
+@import "modules/_index";
+
+// Fade in
+@supports (opacity: 1) and (animation-name: fadeIn) {
+	body {
+		opacity: 0;
+		animation: fadeIn 1s forwards;
+	}
+}
+
+@keyframes fadeIn {
+	100% {
+		opacity: 1;
+	}
+}
+
+/*************************
+/	Cover Top
+/************************/
+.cover-top {
+
+	@media(min-width: $keyBreakpoint){
+		padding: 8% 10% 4%;
+	}
+
+	a {
+		width: 248px;
+		height: 40px;
+		text-indent: -9999em;
+		display: block;
+		margin: 0 auto;
+		@media(min-width: $keyBreakpoint){
+			margin: 0 0;
+		}
+	}
+
+	.sub-title {
+		text-align: center;
+		@media(min-width: $keyBreakpoint){
+			text-align: left;
+		}
+	}
+
+	.book-number {
+		height: 0;
+		padding-bottom: 26%;
+		background-size: contain;
+		width: 20%;
+		text-indent: -9999em;
+		position: relative;
+		display: block;
+		position: absolute;
+		top: 110%;
+		left: 50%;
+		transform: translate(-50%,-50%);
+		z-index: 1000;
+		@media(min-width: $keyBreakpoint){
+			padding-bottom: 23%;
+			top: 50%;
+			right: 2%;
+			left: auto;
+			transform: translate(0,0);
+		}
+
+	}
+
+	&:before {
+		width: 1px;
+		height: 100%;
+		content: " ";
+		background: #000;
+		position: absolute;
+		left: 3%;
+		top: 0;
+		opacity: .05;
+	}
+
+} // header
+
+/*************************
+/	Cover Main
+/************************/
+.cover-main {
+
+	padding: 13% 10% 10% 10%;
+	position: relative;
+	background: $brandPrimaryColor;
+
+	@media(min-width: $keyBreakpoint){
+		padding: 30% 15% 10% 10%;
+	}
+
+	&:before {
+		width: 1px;
+		height: 100%;
+		content: " ";
+		background: #f3b92e;
+		position: absolute;
+		left: 3%;
+		top: 0;
+		opacity: 1;
+	}
+
+	.author {
+		color: #222;
+		font-size: 30px;
+		font-weight: 600;
+		padding-bottom: 15px;
+		margin-bottom: 40px;
+		border-bottom: 2px solid $brandDarkGrey;
+		-webkit-font-smoothing: antialiased;
+		text-align: center;
+		display: block;
+		@media(min-width: $keyBreakpoint){
+			font-size: 30px;
+			text-align: left;
+		}
+	}
+
+	h1 {
+		width: 100%;
+		height: 0;
+		padding-bottom: 77.5%;
+		margin: 0;
+		background-size: 100%;
+		display: block;
+		text-indent: -9999em;
+		font-size: 90px;
+
+		@media(min-width: $keyBreakpoint){
+			width: 76%;
+			padding-bottom: 57.5%;
+		}
+	}
+
+	.forward-by {
+		color: $brandDarkGrey;
+		padding-top: 25px;
+		margin-top: 40px;
+		border-top: 2px solid $brandDarkGrey;
+		text-align: center;
+		display: block;
+		span {
+			text-transform: uppercase;
+		}
+		@media(min-width: $keyBreakpoint){
+			text-align: left;
+		}
+	}
+
+} // main
