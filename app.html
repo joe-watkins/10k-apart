@@ -31,6 +31,22 @@
     function loadCSS(e,t,n){"use strict";function s(){for(var t,l=0;l<r.length;l++)r[l].href&&r[l].href.indexOf(e)>-1&&(t=!0);t?o.media=n||"all":setTimeout(s)}var o=window.document.createElement("link"),l=t||window.document.getElementsByTagName("script")[0],r=window.document.styleSheets;return o.rel="stylesheet",o.href=e,o.media="only x",l.parentNode.insertBefore(o,l),s(),o}loadCSS("styles/lazyload-assets.min.css");
   </script>
 
+  <script>
+      var serviceWorkerFile = "/sw.js";
+
+      if(navigator.serviceWorker){
+          _registerServiceWorker();
+      }
+
+      function _registerServiceWorker(){
+          navigator.serviceWorker.register(serviceWorkerFile).then(function(){
+              console.log("service worker running");
+          }).catch(function(){
+              console.log("nope there was a problem");
+          });
+      }
+  </script>
+
 </body>
 
 </html>
